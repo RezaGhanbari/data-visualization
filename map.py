@@ -17,7 +17,7 @@ def create_map(data_file):
     geo_map = {"type": "FeatureCollection"}
 
     # Define empty list to collect each point to graph
-    item_list = [] 
+    item_list = []
 
     # Iterate over our data to create GeoJSOn document.
     # We're using enumerate() so we get the line, as well
@@ -45,8 +45,8 @@ def create_map(data_file):
         item_list.append(data)
 
     # For each point in our item_list, we add the point to our
-    # dictionary.  setdefault creates a key called 'features' that
-    # has a value type of an empty list.  With each iteration, we
+    # dictionary.setdefault creates a key called 'features' that
+    # has a value type of an empty list. With each iteration, we
     # are appending our point to that list.
     for point in item_list:
         geo_map.setdefault('features', []).append(point)
